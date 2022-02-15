@@ -2,7 +2,7 @@
 @Author: Arnaud N'Guessan
 
 ## Overview
-This repository contains a script for analyzing SARS-CoV-2 evolution in epitopes during the first two waves of the COVID-19 pandemic. This script and the related data can be updated manually to integrate data from other waves or other sets of epitopes. 
+This repository contains a script for analyzing SARS-CoV-2 evolution in epitopes during the first two waves of the COVID-19 pandemic. The immunological data come from a high protein density array analysis of SARS-CoV-2 epitopes in 15 patients (N'Guessan A. et al., 2022). This script and the related data can be updated manually to integrate data from other waves or other sets of epitopes. 
 
 ## Dependencies
 R (version 3.5.2+) packages: "ggplot2", "seqinr", "grid", "RColorBrewer", "randomcoloR", "gplots", "lmPerm", "ggpubr", "gridExtra", "RColorBrewer", "indicspecies", "tidyr", "Cairo", "parallel", "foreach", "doParallel", "infotheo", "VennDiagram", "Biostrings", "session"
