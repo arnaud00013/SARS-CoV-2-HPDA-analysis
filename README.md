@@ -19,3 +19,8 @@ b) Outputs: Various plots showing the evolutionary profile of SARS-CoV-2 epitope
 
 For running the script from a terminal (command line), you must have R (version 3.5.2+) installed or loaded (slurm module) and you must run the command:
 Rscript high_confidence_epitopes_analysis.r $OUTPUT_WORKSPACE $NB_CPUS
+
+## References
+We calculated the prevalence of substitutions in thousands of publicly available consensus sequences collected from NCBI during 2020 and added data from CoV-Spectrum about under-represented lineage in the database or lineages that emerged during 2021 (Chen et al., 2021). The signature mutation dataset is a mix of mutation prevalence data from our own NCBI consensus seqeunces database (for the earlier lineage) and GISAID data obtained from cov-spectrum (for more recent lineages like Omicron). Thus, multiple PANGO versions are involved (v.2.1.7 for the earliest 2020 lineages and v.3.1.20 for recent variants like Omicron).
+
+Chen, C., Nadeau, S., Yared, M., Voinov, P., Ning, X., Roemer, C. & Stadler, T. "CoV-Spectrum: Analysis of globally shared SARS-CoV-2 data to Identify and Characterize New Variants" Bioinformatics (2021); doi: 10.1093/bioinformatics/btab856.
