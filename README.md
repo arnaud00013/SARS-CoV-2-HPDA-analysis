@@ -7,7 +7,7 @@ This repository contains a script for analyzing SARS-CoV-2 evolution in epitopes
 ## Dependencies
 R (version 3.5.2+) packages: "ggplot2", "seqinr", "grid", "RColorBrewer", "randomcoloR", "gplots", "lmPerm", "ggpubr", "gridExtra", "RColorBrewer", "indicspecies", "tidyr", "Cairo", "parallel", "foreach", "doParallel", "infotheo", "VennDiagram", "Biostrings", "session"
 
-## Scripts
+## The script
 
 a) Inputs (files you need to copy into the Variant_calling workspace): 
 
