@@ -2046,80 +2046,12 @@ find_ORF9C_prot_mut_from_N_prot_mut <- function(the_N_prot_mut){
   }
 }
 
-#df_prevalence_mut_of_interest_in_NCBI_WORLDWIDE_lineages$label_mut_prot_effect <- unname(vapply(X = df_prevalence_mut_of_interest_in_NCBI_WORLDWIDE_lineages$mutation_name,FUN = convert_genomic_mut_to_prot_mut,FUN.VALUE = c("")))
 #Define lineages of interest
 v_lineages_of_interest <- c("Alpha (B.1.1.7)","Beta (B.1.351)","Gamma (P.1)","Epsilon (B.1.427+B.1.429)","Kappa+Delta (B.1.617.X)","Eta (B.1.525)","Iota (B.1.526)","Lambda (C.37)","Omicron (B.1.1.529)","Theta (P.3)","Zeta (P.2)","A.2.5","B.1.1.318","B.1.1.519","B.1.466.2 ","B.1.621","B.1.214.2","AV.1","AT.1","C.36.3","R.1","R.2")
-#Alpha (B.1.1.7)
-v_Alpha_signature_muts <- c("N:M1Stop","N:D3L","N:R203K","N:G204R","N:S235F","ORF1a:T1001I","ORF1a:A1708D","ORF1a:I2230T","ORF1b:P314L","ORF8:R52I","ORF8:Y73C","S:N501Y","S:A570D","S:D614G","S:P681H","S:T716I","S:S982A","S:D1118H")
-#Beta (B.1.351)
-v_Beta_signature_muts <- c("E:P71L","N:T205I","ORF1a:T265I","ORF1a:K1655N","ORF1a:K3353R","ORF3a:Q57H","ORF3a:S171L","S:D80A","S:D215G","S:L242H","S:K417N","S:D614G","S:A701V")
-#Gamma (P.1)
-v_Gamma_signature_muts <- c("N:P80R","N:R203K","N:G204R","ORF1a:S1188L","ORF1a:K1795Q","ORF1b:P314L","ORF1b:E1264D","ORF3a:S253P","ORF8:E92K","S:L18F","S:T20N","S:P26S","S:D138Y","S:R190S","S:K417T","S:E484K","S:N501Y","S:D614G","S:H655Y","S:T1027I","S:V1176F")
-#Epsilon (B.1.427/B.1.429)
-v_Epsilon_signature_muts <- c("N:T205I","ORF1a:T265I","ORF1a:I4205V","ORF1a:S3158T","ORF1b:P314L","ORF1b:P976L","ORF1b:D1183Y","ORF3a:Q57H","S:S13I","S:W152C","S:L452R","S:D614G")
-#Kappa/Delta (B.1.617.X)
-v_Kappa_Delta_signature_muts <- c("M:I82T","N:D63G","N:R203M","N:D377Y","ORF1b:P314L","ORF3a:S26L","ORF7a:V82A","S:T19R","S:L452R","S:T478K","S:D614G","S:P681R","S:D950N")
-#Eta (B.1.525)
-v_Eta_signature_muts <- c("M:I82T","N:S2Y","N:A12G","N:T205I","ORF1a:T2007I","ORF1b:P314F","S:A67V","S:E484K","S:D614G","S:Q677H","S:F888L")
-#Iota (B.1.526)
-v_Iota_signature_muts <- c("ORF1a:T265I","ORF1a:L3201P","ORF1b:P314L","ORF3a:P42L","ORF3a:Q57H","ORF8:T11I","S:D614G")
-#Lambda (C.37)
-v_lambda_signature_muts <- c("N:P13L","N:R203K","N:G204R","N:G214C","ORF1a:T1246I","ORF1a:P2287S","ORF1a:F2387V","ORF1a:L3201P","ORF1a:T3255I","ORF1a:G3278S","ORF1b:P314L","S:G75V","S:T76I","S:L452Q","S:F490S","S:D614G","S:T859N")
-#Theta (P.3)
-v_P3_signature_muts <- c("N:R203K","N:G204R","ORF1a:D1554G","ORF1a:S2625F","ORF1a:D2980N","ORF1a:L3201P","ORF1a:D3681E","ORF1a:L3930F","ORF1b:P314L","ORF1b:A1291V","ORF8:K2Q","S:E484K","S:N501Y","S:D614G","S:P681H","S:E1092K","S:H1101Y","S:V1176F")
-#Zeta (P.2)
-v_Zeta_signature_muts <- c("N:A119S","N:R203K","N:G204R","N:M234I","ORF1a:L3468V","ORF1a:L3930F","ORF1b:P314L","S:E484K","S:D614G","S:V1176F")
-#A.2.5
-v_A_2_5_signature_muts <- c("N:S197L","N:M234I","N:P365S","N:P383L","ORF1a:L4F","ORF1a:K1657E","ORF1a:F3071Y","ORF1a:T3255I","ORF1a:H3580Q","ORF1b:P1000L","ORF3a:S74F","ORF3a:G196V","ORF8:L84S","S:L452R","S:D614G")
-#B.1.1.318
-v_B_1_1_318_signature_muts <- c("M:I82T","N:R203K","N:G204R","N:A208G","ORF1a:E1196V","ORF1a:K2511N","ORF1a:T2936I","ORF1a:A3209V","ORF1a:T3284I","ORF1b:P314L","ORF1b:V2371M","ORF8:F3Stop","S:T95I","S:E484K","S:D614G","S:P681H","S:D796H")
-#B.1.1.519
-v_B_1_1_519_signature_muts <- c("N:R203K","N:G204R","ORF1a:P959S","ORF1a:T3255I","ORF1a:I3618V","ORF1a:T4175I","ORF1b:P314L","S:T478K","S:D614G","S:P681H","S:T732A")
-#B.1.466.2
-v_B_1_466_2_signature_muts <- c("N:T205I","ORF1a:T1168I","ORF1a:P1640L","ORF1b:P314L","ORF3a:Q57H","S:N439K","S:D614G")
-#B.1.621
-v_B_1_621_signature_muts <- c("N:T205I","ORF1a:T1055A","ORF1a:T1538I","ORF1a:T3255I","ORF1a:Q3729R","ORF1b:P314L","ORF1b:P1342S","ORF3a:Q57H","ORF3a:N257Stop","ORF8:T11K","ORF8:P38S","S:T95I","S:R346K","S:E484K","S:N501Y","S:D614G","S:P681H","S:D950N")
-#B.1.214.2
-v_B_1_214_2_signature_muts <- c("N:T205I","ORF1a:I1398V","ORF1a:T1881I","ORF1a:A4016V","ORF1b:P314L","S:Q414K","S:D614G","S:T716I")
-#AV.1
-v_AV_1_signature_muts <- c("M:A63T","M:H125Y","N:M1Stop","N:I157V","N:R203K","N:G204R","ORF1a:D75G","ORF1a:G519S","ORF1a:A591V","ORF1a:H1160Y","ORF1a:P1640L","ORF1a:K1745I","ORF1a:N2405S","ORF1a:A3209V","ORF1b:P314L","ORF1b:S425A","ORF1b:T1404M","ORF1b:A1643V","ORF3a:N257Stop","S:D80G","S:T95I","S:G142D","S:E484K","S:D614G","S:P681H","S:I1130V","S:D1139H")
-#AT.1
-v_AT_1_signature_muts <- c("M:L16I","N:R203K","N:G204R","ORF1a:S376L","ORF1a:V1006F","ORF1a:T2247N","ORF1a:T3255I","ORF1a:Q3729R","ORF1a:S4119T","ORF1b:P314L","ORF1b:T1173N","ORF1b:V1905L","ORF1b:A2431V","ORF3a:L95M","S:P9L","S:C136Y","S:D215G","S:H245P","S:E484K","S:D614G","S:E780K")
-#C.36.3
-v_C_36_3_signature_muts <- c("M:I82T","N:M1Stop","N:R203K","N:G204R","N:G212V","ORF1a:E102K","ORF1a:A859V","ORF1a:T1246I","ORF1a:D1639N","ORF1a:P2287S","ORF1a:D2980N","ORF1a:D3222N","ORF1a:G3278S","ORF1a:S3687L","ORF1a:L3691S","ORF1a:T4090I","ORF1b:P314L","ORF1b:D1028Y","ORF7b:A43S","S:S12F","S:W152R","S:R346S","S:L452R","S:D614G","S:Q677H","S:A899S")
-#R.1
-v_R_1_signature_muts <- c("M:F28L","N:S187L","N:R203K","N:G204R","N:Q418H","ORF1b:P314L","ORF1b:G1362R","ORF1b:P1936H","S:W152L","S:E484K","S:D614G","S:G769V")
-#R.2
-v_R_2_signature_muts <- c("N:R203K","N:G204R","ORF1a:A1049V","ORF1a:K1202N","ORF1a:Q1592R","ORF1a:D4085G","ORF1b:P314L","S:D614G","S:Q677H","S:T732S")
-#Omicron (B.1.1.529)
-v_Omicron_B_1_1_529_signature_muts <- c("S:Y505H","N:G204R","N:R203K","ORF1a:A2710T","ORF1a:I3758V","ORF1a:K856R","ORF1a:T3255I","ORF1b:I1566V","ORF1b:P314L","S:D614G","S:E484A","S:G339D","S:G446S","S:G496S","S:H655Y","S:K417N","S:N440K","S:N501Y","S:N679K","S:P681H","S:Q493R","S:Q498R","S:S371L","S:S373P","S:S375F","S:S477N","S:T478K","S:T547K","ORF1a:L2084I","S:A67V","S:Y145D","E:T9I","M:A63T","M:D3G","M:Q19E","S:L212I","S:T95I","ORF1a:P3395H")
 
-#Lineages of interest (high confidence epitope analysis)
-df_prevalence_mut_of_interest_in_NCBI_WORLDWIDE_lineages <- readRDS(file = paste0(output_workspace,"Table_df_all_mutations_prevalence_in_lineages.rds"))
-df_prevalence_mut_of_interest_in_NCBI_WORLDWIDE_lineages <- subset(df_prevalence_mut_of_interest_in_NCBI_WORLDWIDE_lineages,!lineage%in%c("B.1.1.7","B.1.351","P.1","B.1.427","B.1.429","B.1.617.X","B.1.525","B.1.526","C.37","P.3","P.2","A.2.5","B.1.160","B.1.177","B.1.1.318","B.1.1.519","B.1.466.2 ","B.1.621","B.1.214.2","AV.1","AT.1","C.36.3","R.1","R.2","B.1.1.529"))
-df_signature_mutations <- subset(df_prevalence_mut_of_interest_in_NCBI_WORLDWIDE_lineages,(!is.na(lineage))&(prevalence>=0.9))
-df_signature_mutations$label_mut_prot_effect <- NA
-df_signature_mutations$is_not_sense <- NA
-for (i in 1:nrow(df_signature_mutations)){
-  df_signature_mutations$label_mut_ORF_prot_effect[i] <- convert_genomic_mut_to_ORF_prot_mut(the_genomic_mut = df_signature_mutations$mutation_name[i])
-  df_signature_mutations$label_mut_prot_effect[i] <- convert_genomic_mut_to_prot_mut(the_genomic_mut = df_signature_mutations$mutation_name[i])
-  # print(i)
-  pos_delim_char <- gregexpr(pattern = ":",text = df_signature_mutations$label_mut_prot_effect[i],fixed = T)[[1]][1]
-  current_old_aa <- substr(df_signature_mutations$label_mut_prot_effect[i],pos_delim_char+1,pos_delim_char+1)
-  if (grepl(pattern = "Stop",x = df_signature_mutations$label_mut_prot_effect[i],fixed = T)){
-    current_new_aa <- "Stop"
-  }else{
-    current_new_aa <- substr(df_signature_mutations$label_mut_prot_effect[i],nchar(df_signature_mutations$label_mut_prot_effect[i]),nchar(df_signature_mutations$label_mut_prot_effect[i]))
-  }
-  #determine if mutation is not synonymous (so either non-synonymous (Missense) or nonsense)
-  df_signature_mutations$is_not_sense[i] <- (!is.na(current_old_aa))&(current_old_aa!=current_new_aa)
-} 
-df_signature_mutations <- subset(df_signature_mutations,(!is.na(label_mut_ORF_prot_effect))&(!is.na(is_not_sense))&(is_not_sense))[,c("label_mut_ORF_prot_effect","lineage")]
-df_signature_mutations <- df_signature_mutations[,c("label_mut_ORF_prot_effect","lineage")]
-df_signature_mutations_to_add <- data.frame(label_mut_ORF_prot_effect=c(v_Alpha_signature_muts,v_Beta_signature_muts,v_Gamma_signature_muts,v_Epsilon_signature_muts,v_Kappa_Delta_signature_muts,v_Eta_signature_muts,v_Iota_signature_muts,v_lambda_signature_muts,v_Omicron_B_1_1_529_signature_muts,v_P3_signature_muts,v_Zeta_signature_muts,v_A_2_5_signature_muts,v_B_1_1_318_signature_muts,v_B_1_1_519_signature_muts,v_B_1_466_2_signature_muts,v_B_1_621_signature_muts,v_B_1_214_2_signature_muts,v_AV_1_signature_muts,v_AT_1_signature_muts,v_C_36_3_signature_muts,v_R_1_signature_muts,v_R_2_signature_muts),lineage=rep(x = v_lineages_of_interest,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         times=c(length(v_Alpha_signature_muts),length(v_Beta_signature_muts),length(v_Gamma_signature_muts),length(v_Epsilon_signature_muts),length(v_Kappa_Delta_signature_muts),length(v_Eta_signature_muts),length(v_Iota_signature_muts),length(v_lambda_signature_muts),length(v_Omicron_B_1_1_529_signature_muts),length(v_P3_signature_muts),length(v_Zeta_signature_muts),length(v_A_2_5_signature_muts),length(v_B_1_1_318_signature_muts),length(v_B_1_1_519_signature_muts),length(v_B_1_466_2_signature_muts),length(v_B_1_621_signature_muts),length(v_B_1_214_2_signature_muts),length(v_AV_1_signature_muts),length(v_AT_1_signature_muts),length(v_C_36_3_signature_muts),length(v_R_1_signature_muts),length(v_R_2_signature_muts))),stringsAsFactors = F)
-df_signature_mutations <- unique(rbind(df_signature_mutations,df_signature_mutations_to_add))
-df_signature_mutations <- subset(df_signature_mutations,vapply(X = df_signature_mutations$label_mut_ORF_prot_effect,FUN = function (x) !grepl(pattern = "Stop",x = x,fixed = T),FUN.VALUE = F))
+#Import signature mutations prevalence data
+df_signature_mutations <- read.csv2(file = paste0(output_workspace,"Table_signature_mutations.csv"),sep = ",",header = TRUE,stringsAsFactors = FALSE,na.strings = c("NA","NaN","","na","Na","NAN"))
+#add data about the corresponding epitope sites
 v_start_orfs_cap <- v_start_orfs
 names(v_start_orfs_cap) <- toupper(names(v_start_orfs))
 for (i in 1:nrow(df_signature_mutations)){
@@ -2172,7 +2104,8 @@ df_signature_mutations <- subset(df_signature_mutations,is_nonsyn)
 df_signature_mutations$is_nonsyn <- NULL 
 v_mut_name_to_label_mut_ORF_prot_effect <- unique(df_variants_NCBI_SRA_amplicon[,c("mutation_name","label_mut_ORF_prot_effect")])$label_mut_ORF_prot_effect
 names(v_mut_name_to_label_mut_ORF_prot_effect) <- unique(df_variants_NCBI_SRA_amplicon[,c("mutation_name","label_mut_ORF_prot_effect")])$mutation_name
-saveRDS(object = df_signature_mutations,file = paste0(output_workspace,"Table_Missense_and_Nonsense_signature_mutations_prevalence_in_SC2_lineages_consensus_sequences_as_of_2021_01_16_plus_VOCs.rds"))
+#save table
+write.table(x=df_signature_mutations,file = paste0(output_workspace,"Table_signature_mutations.csv"),sep = ",",na = "NA",row.names = FALSE,col.names = TRUE)
 
 #VOC nb mutations in epitope sites and c-r epitope sites https://outbreak.info/situation-reports and https://www.who.int/en/activities/tracking-SARS-CoV-2-variants/ as of 2021-07-06
 df_signature_mutations_for_VOCs <- subset(df_signature_mutations,lineage%in%v_lineages_of_interest)
